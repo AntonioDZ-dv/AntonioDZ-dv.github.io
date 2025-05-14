@@ -1,0 +1,66 @@
+/* General */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Fondo con gradiente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Contenedor del formulario */
+.form-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    text-align: center;
+}
+
+/* Título */
+.form-container h1 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+}
+
+/* Inputs del formulario */
+.form-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+/* Botón del formulario */
+.form-button {
+    background: linear-gradient(45deg, #6a11cb, #2575fc); /* Gradiente en el botón */
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+.form-button:hover {
+    background: linear-gradient(45deg, #2575fc, #6a11cb); /* Cambio de gradiente al pasar el mouse */
+}
+
+/* Mensajes de éxito y error */
+.success-message {
+    color: green;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+}
