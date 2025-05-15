@@ -17,7 +17,7 @@ session_start();
         <div class="top-bar">
             <p>Bienvenido a la tienda en línea de Laura's Creations</p>
             <div class="language-currency">
-                <span>Idioma: Español</span>
+                <span>Idioma: English</span>
                 <span>Moneda: MXN</span>
             </div>
         </div>
