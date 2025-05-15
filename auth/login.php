@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // Redirigir a la pagina principal
             // header("Location: index.php");
-            header("Location: index.php");
+            header("Location: ..\index.php");
             exit();
         } else {
             $error = "Credenciales incorrectas.";
