@@ -129,7 +129,7 @@ session_start();
                 </span>
             </div>
         </div>
-        <a href="..\pages\masProductos.php" class="btn">Ver más productos</a>
+        <a href="..\pages\moreProducts.php" class="btn">Ver más productos</a>
     </section>
     <section class="accesories">
         <h2>Accesorios extras</h2>  
