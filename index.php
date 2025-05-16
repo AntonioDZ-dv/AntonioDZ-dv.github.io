@@ -25,7 +25,7 @@ session_start();
             <h1 class="logo">Laura's Creations</h1>
             <nav>
                 <ul class="nav-links">
-                    <li><a href="ramos.php" class="active">Inicio</a></li>
+                    <li><a href="..\index.php" class="active">Inicio</a></li>
                     <li><a href="#">Usuarios</a></li>
                     <li><a href="#">Social</a></li>
                 </ul>
@@ -41,8 +41,8 @@ session_start();
                     <i class="fa-solid fa-user fa-3x"></i>
                 </button>
             <div id="dropdownMenu" class="dropdown-menu">
-                <a href="auth\login.php">Iniciar sesión</a>
-            <a href="auth\register.php">Registrarse</a>
+                <a href="..\auth\login.php">Iniciar sesión</a>
+            <a href="..\auth\register.php">Registrarse</a>
     </div>
 </div>
         </div>

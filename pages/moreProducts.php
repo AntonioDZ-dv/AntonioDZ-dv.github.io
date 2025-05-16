@@ -33,7 +33,7 @@ session_start();
             <h1 class="logo">Laura's Creations</h1>
             <nav>
                 <ul class="nav-links">
-                    <li><a href="ramos.php">Inicio</a></li>
+                    <li><a href="..\index.php">Inicio</a></li>
                     <li><a href="productos.php">Productos</a></li>
                     <li><a href="#">Usuarios</a></li>
                     <li><a href="#">Social</a></li>
@@ -41,15 +41,15 @@ session_start();
             </nav>
             <div class="user-actions">
                 <?php if (isset($_SESSION["user_id"])): ?>
-                    <a href="logout.php">Cerrar sesión</a>
+                    <a href="..\logout.php">Cerrar sesión</a>
                 <?php else: ?>
                     <div class="user-menu">
                 <button id="userIcon" class="user-icon-btn" aria-label="Menú de usuario">
                     <i class="fa-solid fa-user fa-3x"></i>
                 </button>
             <div id="dropdownMenu" class="dropdown-menu">
-                <a href="login.php">Iniciar sesión</a>
-            <a href="register.php">Registrarse</a>
+                <a href="..\login.php">Iniciar sesión</a>
+            <a href="..\register.php">Registrarse</a>
                 <?php endif; ?>
             </div>
         </div>
@@ -60,6 +60,31 @@ $precios = [
     207, 1279, 480, 360, 300, 534, 180, 
     188, 488, 1360, 500, 40, 288, 870, 
     194, 624, 180, 180, 179, 384, 384, 375
+];
+
+$descripciones = [
+    "Ramo de rosas rojas clásico.",
+    "Arreglo floral elegante con lirios.",
+    "Bouquet de girasoles vibrantes.",
+    "Ramo mixto de flores silvestres.",
+    "Rosas blancas con follaje verde.",
+    "Ramo pequeño de margaritas.",
+    "Tulipanes de colores variados.",
+    "Ramo romántico con rosas y lilas.",
+    "Bouquet primaveral multicolor.",
+    "Arreglo premium con orquídeas.",
+    "Ramo de flores secas decorativas.",
+    "Mini ramo de flores frescas.",
+    "Ramo alegre con gerberas.",
+    "Bouquet de rosas y alstroemerias.",
+    "Ramo sencillo de claveles.",
+    "Arreglo con flores exóticas.",
+    "Ramo de lavanda aromática.",
+    "Bouquet de flores campestres.",
+    "Ramo especial para cumpleaños.",
+    "Arreglo elegante con follaje.",
+    "Bouquet de temporada.",
+    "Ramo personalizado a elección."
 ];
 ?>
     
@@ -72,6 +97,7 @@ $precios = [
                 <img src="..\components\images\ramo<?php echo $i; ?>.jpeg" alt="Producto <?php echo $i; ?>">
                 <p>Ramo <?php echo $i; ?></p>
                 <p>$<?php echo $precios[$i - 1]; ?>.00</p>
+                <p><?php echo $descripciones[$i - 1]; ?></p>
             </div>
             <?php endfor; ?>
         </div>
@@ -81,6 +107,6 @@ $precios = [
     <footer class="footer">
         <p>&copy; 2025 Laura's Creations. Todos los derechos reservados.</p>
     </footer>
-    <script src="script.js"></script>
+    <script src="..\script.js"></script>
 </body>
 </html>

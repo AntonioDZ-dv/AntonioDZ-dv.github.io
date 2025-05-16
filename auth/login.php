@@ -1,5 +1,5 @@
 <?php
-include("CONFIG\db.php");
+include(".\CONFIG\db.php");
 session_start();
 
 // Verificar si se envió el formulario
