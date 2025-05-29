@@ -17,23 +17,49 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     width: 350px;
     text-align: center;
+    
+}
+.business-title{
+    font-family: 'Chicle', cursive;
+    text-align: center;
+    font-size: 1.7em;
+    margin-top: 20x;
+    padding-bottom: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    background: linear-gradient(45deg, #FF6FD8, #3813C2);
+    border-radius: 16px;
+    padding-top: 10px;
+    
 }
 
+
 /* Título */
-.form-container h1 {
-    margin-bottom: 20px;
+.register-title {
+    margin-bottom: 40px;
     color: #333;
     font-size: 24px;
+    border-bottom: 3px solid #e1e0e0;
+    padding-bottom: 20px;
 }
+
+
 
 /* Inputs del formulario */
 .form-input {
-    width: 100%;
+    width: 94%;
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 6px;
     font-size: 14px;
+}
+.label-input {
+    color: #333;
+    text-align: left;
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
 }
 
 /* Botón del formulario */
@@ -64,3 +90,16 @@ body {
     font-size: 14px;
     margin-top: 10px;
 }
+
+.login-link {
+    color: #3813C2 !important;
+    text-decoration: none; /* Elimina el subrayado por defecto */
+    font-weight: bold;
+}
+a{
+    text-decoration: none;
+}
+a:hover {
+    color : green;
+}
+

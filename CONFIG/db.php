@@ -2,7 +2,7 @@
 // Configuración de conexión a la base de datos
 $host = "localhost"; // Dirección del servidor
 $user = "root"; // Usuario de la base de datos
-$pass = "kanzakibg"; // Contraseña del usuario (vacía por defecto en XAMPP)
+$pass = "123456789"; // Contraseña del usuario (vacía por defecto en XAMPP)
 $dbname = "negocio_ramos"; // Nombre de la base de datos
 
 // Conexión a la base de datos

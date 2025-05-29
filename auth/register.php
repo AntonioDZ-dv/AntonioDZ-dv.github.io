@@ -1,6 +1,7 @@
 <?php
-include(".\CONFIG\db.php");
+include(__DIR__ . '/../CONFIG/db.php');
 
+$formVisible = true;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nombre = $_POST["nombre"];
     $email = $_POST["email"];
@@ -11,31 +12,42 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("sss", $nombre, $email, $password);
     
     if ($stmt->execute()) {
-        echo "<p class='success-message'>Registro exitoso. <a href='auth\login.php'>Iniciar sesión</a></p>";
+        $message = "<p class='success-message'>Registro exitoso. <a href='login.php'>Iniciar sesión</a></p>";
+        $formVisible = false;
     } else {
-        echo "<p class='error-message'>Error: " . $stmt->error . "</p>";
+        $message = "<p class='error-message'>Error: " . $stmt->error . "</p>";
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>  
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
-    <link rel="stylesheet" href="..\components\css\styles-register.css"> <!-- Enlace al archivo CSS -->
+    <link rel="stylesheet" href="..\components\css\styles-register.css">
 </head>
 <body>
     <div class="form-container">
-        <h1>Registrarse</h1>
+        <h1 class="business-title">Laura Creation's</h1>
+        <?php if (isset($message)) echo $message; ?>
+        <?php if ($formVisible): ?>
+        <h2 class="register-title">Crea tu cuenta</h2>     
         <form method="post">
-            <input type="text" name="nombre" placeholder="Nombre" class="form-input" required><br>
-            <input type="email" name="email" placeholder="Correo electrónico" class="form-input" required><br>
-            <input type="password" name="password" placeholder="Contraseña" class="form-input" required><br>
+            <label for="nombre" class="label-input">Nombre</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Antonio" class="form-input" required><br>
+            
+            <label for="email" class="label-input">Correo electrónico</label>
+            <input type="email" id="email" name="email" placeholder="ejemplo@gmail.com" class="form-input" required><br>
+            
+            <label for="password" class="label-input">Contraseña</label>
+            <input type="password" id="password" name="password" placeholder="************" class="form-input" required><br>
+            
             <button type="submit" class="form-button">Registrarse</button>
-            <p class="login-link">¿Ya tienes una cuenta? <a href="login.php">Inicia sesión</a></p>
+            <p class="login-link"><a href="login.php">¿Ya tienes una cuenta?</a></p>
         </form>
+        <?php endif; ?>
     </div>
 </body>
 </html>
+

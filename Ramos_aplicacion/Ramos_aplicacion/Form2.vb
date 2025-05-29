@@ -14,7 +14,7 @@ Public Class Form2
             Me.Hide() ' Oculta el formulario de inicio de sesión
         Else
             ' Si no es "admin", verificar en la base de datos
-            Dim connectionString As String = "Server=localhost;Database=negocio_ramos;Uid=root;Pwd=kanzakibg;"
+            Dim connectionString As String = "Server=localhost;Database=negocio_ramos;Uid=root;Pwd=123456789;"
 
             Dim query As String = "SELECT password FROM usuarios WHERE email = @username"
 

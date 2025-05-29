@@ -9,14 +9,24 @@ body {
     margin: 0;
 }
 
-/* Contenedor del formulario */
 form {
     background-color: #fff;
-    padding: 30px;
+    padding: 30px;  
     border-radius: 16px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     width: 350px;
     text-align: center;
+}
+.business-title {
+    font-family: 'Chicle', cursive;
+    border-bottom: solid 3px #e1e0e0;
+    width: 100%;
+    padding-bottom: 23px;
+    margin-top: 8px;
+    text-align: start;
+}
+.facebook-logo {
+    
 }
 
 /* Título */
@@ -29,7 +39,7 @@ h1 {
 /* Inputs del formulario */
 input[type="email"],
 input[type="password"] {
-    width: 100%;
+    width: 93%;
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #ccc;

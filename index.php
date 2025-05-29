@@ -26,8 +26,8 @@ session_start();
             <nav>
                 <ul class="nav-links">
                     <li><a href="..\index.php" class="active">Inicio</a></li>
-                    <li><a href="#">Usuarios</a></li>
-                    <li><a href="#">Social</a></li>
+                     <li><a href="..\pages\moreProducts.php" class="btn-destacado">Ver más productos</a></li>
+                  
                 </ul>
             </nav>
 
@@ -52,9 +52,8 @@ session_start();
 
     <section class="hero">
         <div class="hero-content">
-            <h2>Regalo para el Día de las Madres</h2>
-            <p>Flores
-                 para hacer sentir especial a mamá</p>
+            <h2>Regalos que Iluminan Cualquier Momento</h2>
+            <p>Flores y detalles para sorprender a quienes más quieres, cualquier día del año.</p>
          
         </div>
     </section>
@@ -69,7 +68,7 @@ session_start();
    
 
     <section class="top-sellers">
-        <h2>Top Sellers</h2>
+        <h2>Más vendidos</h2>
         <div class="top-sellers-img">
             <img src="components\images\ramo1.jpeg" alt="ramo1">
             <img src="components\images\ramo2.jpeg" alt="flor_tela">
@@ -147,11 +146,43 @@ session_start();
             
         </div>
     </section>
+     <section class="accesories">
+        <h3>Coronas</h3>
+        <div class="accesories-img">
+            <img src="components\images\corona1.jpeg" >
+            <img src="components\images\corona2.jpeg" >
+            <img src="components\images\corona3.jpeg" >
+          
+        </div>
+    </section>
+    <?php
+include 'CONFIG\db.php'; // o la ruta correcta según tu estructura de carpetas
+
+$result = $conn->query("SELECT comentario, fecha FROM admin_comments ORDER BY fecha DESC LIMIT 10");
+?>
+
+<section class="admin-commits">
+    <h3>Comentario de los admin</h3>
+    <div class="">
+        <?php
+        if ($result && $result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+                echo "<div class='admin-comment'>";
+                echo "<p><strong>Admin:</strong> " . htmlspecialchars($row['comentario']) . "</p>";
+                echo "<small>" . $row['fecha'] . "</small>";
+                echo "</div>";
+            }
+        } else {
+            echo "<p>No hay comentarios aún.</p>";
+        }
+        ?>
+    </div>
+</section>
 
     <footer class="footer">
         <p> <span> <a href="https://www.facebook.com/people/Lauras-Creations/61572005057732/?mibextid=wwXIfr&rdid=0hZmeZw3vwuJltym&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F18wpDFayGi%2F%3Fmibextid%3DwwXIfr" class=""><i class="fab fa-facebook-f"></i></a></span>&copy; 2025 Laura's Creations. Todos los derechos reservados.</p>
        
     </footer>
-    <script src="components\js\script.js"></script>
+    <script src="..\components\js\script.js"></script>
 </body>
 </html>

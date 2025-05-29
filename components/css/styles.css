@@ -12,8 +12,6 @@ html, body {
     
 }
 
-  
-
 
 * {
     margin: 0;
@@ -34,7 +32,7 @@ a {
 }
 
 a:hover {
-    color: red;
+    color: #333;
     transition-duration: 0.4s;
     transition-delay: 0.1s;
 }
@@ -179,7 +177,7 @@ a:hover {
     border-radius: 15px;
 }
 .btn:hover {
-    background: linear-gradient(90deg, #6c63ff 0%, #dc1db6 100%);
+    background: linear-gradient(90deg, #6c63ff 0%, #dc1db6 100%) ;
     transform: scale(1.05);
 }
 
@@ -233,6 +231,20 @@ a:hover {
     height: 600px; /* Altura fija para el contenedor */
     box-sizing: border-box;
 }
+
+.product .descripcion {
+    margin-bottom: 8px;
+    font-weight: bold;
+   
+}
+
+.product .precio {
+    margin-top: 10px;
+    font-size: 1.1em;
+    color: #b12704;
+    font-weight: 600;
+}
+
 .product {
     background: #fff;
     border-radius: 18px;
@@ -360,6 +372,7 @@ footer {
 }
 .accesories{
     text-align: center;
+    border: 4px  solid #0066ff; /* Línea sólida azul */
     
 }
 
@@ -428,3 +441,16 @@ footer {
     }
 }
 
+/* SOLO para moreProducts */
+.more-products-body .logo-nav {
+    display: flex;
+    justify-content: space-between; /* Ya lo tienes, pero lo dejamos para claridad */
+    align-items: center;
+}
+.more-products-body .nav-links {
+    margin-left: auto;  /* Empuja el menú de navegación a la derecha */
+    margin-right: 20px; /* Espacio a la derecha del menú */
+}
+.more-products-body .user-actions {
+    margin-left: 20px;  /* Espacio entre el menú y el icono de usuario */
+}

@@ -1,5 +1,6 @@
 <?php
-include(".\CONFIG\db.php");
+include(__DIR__ . '/../CONFIG/db.php');
+
 session_start();
 
 // Verificar si se envió el formulario
@@ -55,10 +56,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <?php if (isset($error)): ?>
         <p style="color: red;"><?php echo $error; ?></p>
     <?php endif; ?>
-    <form method="post">
-        <input type="email" name="email" placeholder="Correo electrónico" required>
-        <input type="password" name="password" placeholder="Contraseña" required>
-        <button type="submit">Iniciar Sesión</button>
-    </form>
+    <div class="login-container">
+        <form method="post">
+            <h1 class="business-title">Laura Creation's <p>
+                <a class="facebook-logo" href="https://www.facebook.com/people/Lauras-Creations/61572005057732/?mibextid=wwXIfr&rdid=0hZmeZw3vwuJltym&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F18wpDFayGi%2F%3Fmibextid%3DwwXIfr" class="" target="_blank" rel="noopener">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" style="width:32px;height:32px;vertical-align:middle;">
+                </a>  
+            </p></h1>
+            
+            <input type="email" name="email" placeholder="Correo electrónico" required>
+            <input type="password" name="password" placeholder="Contraseña" required>
+            <button type="submit">Iniciar Sesión</button>
+        </form>
+    </div>
 </body>
 </html>

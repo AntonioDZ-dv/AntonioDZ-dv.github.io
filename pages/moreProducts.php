@@ -12,15 +12,21 @@ session_start();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="../components/css/font-more-Products.css">
     <style>
-
-</style>
-
-    <style>
-
-</style>
-
+    /* SOLO para moreProducts.php */
+    .more-products-body .logo-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .more-products-body .nav-user-group {
+        display: flex;
+        align-items: center;
+        gap: 18px; /* Espacio entre botón e icono */
+    }
+    </style>
 </head>
-<body>
+<body class="more-products-body">
+
     <header class="header">
         <div class="top-bar">
             <p>Bienvenido a la tienda en línea de Laura's Creations</p>
@@ -31,26 +37,27 @@ session_start();
         </div>
         <div class="logo-nav">
             <h1 class="logo">Laura's Creations</h1>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="..\index.php">Inicio</a></li>
-                    <li><a href="productos.php">Productos</a></li>
-                    <li><a href="#">Usuarios</a></li>
-                    <li><a href="#">Social</a></li>
-                </ul>
-            </nav>
-            <div class="user-actions">
-                <?php if (isset($_SESSION["user_id"])): ?>
-                    <a href="..\logout.php">Cerrar sesión</a>
-                <?php else: ?>
-                    <div class="user-menu">
-                <button id="userIcon" class="user-icon-btn" aria-label="Menú de usuario">
-                    <i class="fa-solid fa-user fa-3x"></i>
-                </button>
-            <div id="dropdownMenu" class="dropdown-menu">
-                <a href="..\login.php">Iniciar sesión</a>
-            <a href="..\register.php">Registrarse</a>
-                <?php endif; ?>
+            <div class="nav-user-group">
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="..\index.php">Inicio</a></li>
+                    </ul>
+                </nav>
+                <div class="user-actions">
+                    <?php if (isset($_SESSION["user_id"])): ?>
+                        <a href="..\auth\logout.php">Cerrar sesión</a>
+                    <?php else: ?>
+                        <div class="user-menu">
+                            <button id="userIcon" class="user-icon-btn" aria-label="Menú de usuario">
+                                <i class="fa-solid fa-user fa-3x"></i>
+                            </button>
+                            <div id="dropdownMenu" class="dropdown-menu">
+                                <a href="..\auth\login.php">Iniciar sesión</a>
+                                <a href="..\auth\register.php">Registrarse</a>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+                </div>
             </div>
         </div>
     </header>
@@ -59,32 +66,29 @@ session_start();
 $precios = [
     207, 1279, 480, 360, 300, 534, 180, 
     188, 488, 1360, 500, 40, 288, 870, 
-    194, 624, 180, 180, 179, 384, 384, 375
-];
+    194, 624, 180, 180, 179,];
 
 $descripciones = [
-    "Ramo de rosas rojas clásico.",
-    "Arreglo floral elegante con lirios.",
-    "Bouquet de girasoles vibrantes.",
-    "Ramo mixto de flores silvestres.",
-    "Rosas blancas con follaje verde.",
-    "Ramo pequeño de margaritas.",
-    "Tulipanes de colores variados.",
-    "Ramo romántico con rosas y lilas.",
-    "Bouquet primaveral multicolor.",
-    "Arreglo premium con orquídeas.",
-    "Ramo de flores secas decorativas.",
-    "Mini ramo de flores frescas.",
-    "Ramo alegre con gerberas.",
-    "Bouquet de rosas y alstroemerias.",
-    "Ramo sencillo de claveles.",
-    "Arreglo con flores exóticas.",
-    "Ramo de lavanda aromática.",
-    "Bouquet de flores campestres.",
-    "Ramo especial para cumpleaños.",
-    "Arreglo elegante con follaje.",
-    "Bouquet de temporada.",
-    "Ramo personalizado a elección."
+    "Eterno Cumpleaños",
+    "Promesa de Amor",
+    "Luz de Gratitud",
+    "Brisa de Primavera",
+    "Dulce Encuentro",
+    "Rosa Celestial",
+    "Amistad que Florece",
+    "Romance Dorado",
+    "Ternura Eterna ",
+    "Corazón Carmesí",
+    "Sueño de Quince ",
+    "Amor Infinito",
+    "Día Radiante",
+    "Besos de Rosa",
+    "Mil Gracias",
+    "Ilusión Púrpura",
+    "Sol de Ocaso",
+    "Magia de Tarde",
+    "Alma de Fiesta",
+    
 ];
 ?>
     
@@ -92,21 +96,20 @@ $descripciones = [
     <section class="product-gallery">
         <h2>Galería de Productos</h2>
         <div class="product-grid">
-            <?php for ($i = 1; $i <= 22; $i++): ?>
+            <?php for ($i = 1; $i <= count($precios); $i++): ?>
             <div class="product">
                 <img src="..\components\images\ramo<?php echo $i; ?>.jpeg" alt="Producto <?php echo $i; ?>">
-                <p>Ramo <?php echo $i; ?></p>
-                <p>$<?php echo $precios[$i - 1]; ?>.00</p>
-                <p><?php echo $descripciones[$i - 1]; ?></p>
+                <p class="descripcion"><?php echo $descripciones[$i - 1]; ?></p>
+                <p class="precio">$<?php echo $precios[$i - 1]; ?>.00</p>
             </div>
             <?php endfor; ?>
         </div>
     </section>
 </main>
 
-    <footer class="footer">
-        <p>&copy; 2025 Laura's Creations. Todos los derechos reservados.</p>
-    </footer>
-    <script src="..\script.js"></script>
+<footer class="footer">
+    <p>&copy; 2025 Laura's Creations. Todos los derechos reservados.</p>
+</footer>
+<script src="..\components\js\script.js"></script>
 </body>
 </html>
